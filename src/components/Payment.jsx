@@ -39,7 +39,10 @@ export default function Payment() {
         try {
             // API call to the backend to complete the booking process
             const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/booking`, {
-                ...state.form,
+                name: state.form.name,
+                age: state.form.age,
+                address: state.form.address,
+                Mobile_number: state.form.mobile,
                 destination: state.bus.destination,
                 bookingtime: new Date(),
                 travel_date: state.travelDate,

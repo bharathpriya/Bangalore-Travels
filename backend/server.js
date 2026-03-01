@@ -88,15 +88,15 @@ app.post("/feedback", (req, res) => {
 
 // BOOKING
 app.post("/booking", (req, res) => {
-  const { name, age, address, mobile, destination, bookingtime, bus_name, price, travel_date } = req.body;
+  const { name, age, address, Mobile_number, destination, bookingtime, bus_name, price, travel_date } = req.body;
 
-  if (!name || !age || !address || !mobile || !travel_date) {
+  if (!name || !age || !address || !Mobile_number || !travel_date) {
     return res.status(400).send("Name, Age, Address, Mobile, and Travel Date are required");
   }
 
   db.query(
     "INSERT INTO bookings (name, age, address, destination, bookingtime, Mobile_number, travel_date) VALUES (?, ?, ?, ?, ?, ?, ?)",
-    [name, age, address, destination, bookingtime, mobile, travel_date],
+    [name, age, address, destination, bookingtime, Mobile_number, travel_date],
     async (err, result) => {
       if (err) {
         console.error("Booking error:", err);
@@ -122,7 +122,7 @@ app.post("/booking", (req, res) => {
         doc.moveDown();
         doc.text(`Passenger Name: ${name}`);
         doc.text(`Age: ${age}`);
-        doc.text(`Mobile: ${mobile}`);
+        doc.text(`Mobile: ${Mobile_number}`);
         doc.moveDown();
         doc.text(`Bus: ${bus_name}`);
         doc.text(`Destination: ${destination}`);
@@ -141,7 +141,7 @@ app.post("/booking", (req, res) => {
         // Send SMS with Ticket Link
         const formattedDate = new Date(travel_date).toLocaleDateString();
         const msg = `Your booking for ${bus_name} on ${formattedDate} is confirmed! Download Ticket: ${ticketUrl}`;
-        sendSMS(mobile, msg).catch(err => console.error("SMS failed to send:", err));
+        sendSMS(Mobile_number, msg).catch(err => console.error("SMS failed to send:", err));
 
         // Return json with ticketUrl
         res.json({ message: "Booking Successful", ticketUrl });
