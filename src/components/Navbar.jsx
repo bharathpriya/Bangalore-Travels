@@ -50,13 +50,13 @@ export default function Navbar() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px',
+                gap: '8px',
                 color: '#fff',
                 background: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 fontWeight: '500',
                 cursor: 'pointer',
-                padding: '6px 14px 6px 6px',
+                padding: '4px 12px 4px 4px',
                 borderRadius: '30px',
                 whiteSpace: 'nowrap',
                 transition: 'all 0.3s ease'
@@ -65,22 +65,22 @@ export default function Navbar() {
               onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'}
             >
               <div style={{
-                width: '28px',
-                height: '28px',
+                width: '24px',
+                height: '24px',
                 borderRadius: '50%',
                 background: 'linear-gradient(135deg, #06b6d4, #22c55e)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '14px',
+                fontSize: '12px',
                 color: 'white',
                 fontWeight: 'bold',
                 boxShadow: '0 2px 10px rgba(6, 182, 212, 0.3)'
               }}>
                 {userName ? userName.charAt(0).toUpperCase() : 'U'}
               </div>
-              <span style={{ fontSize: '15px', color: '#e2e8f0', letterSpacing: '0.5px' }}>{userName}</span>
-              <span style={{ fontSize: '10px', opacity: 0.5, marginLeft: '4px' }}>▼</span>
+              <span className="profile-name" style={{ fontSize: '14px', color: '#e2e8f0', letterSpacing: '0.3px' }}>{userName}</span>
+              <span style={{ fontSize: '9px', opacity: 0.5, marginLeft: '2px' }}>▼</span>
             </div>
 
             {dropdownOpen && (
