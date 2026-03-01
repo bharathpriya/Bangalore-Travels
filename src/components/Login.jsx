@@ -17,6 +17,8 @@ export default function Login() {
       localStorage.setItem("userId", res.data.userId);
       localStorage.setItem("userName", res.data.name);
       window.location.href = "/";
+    } else {
+      alert(res.data.message || "Invalid credentials");
     }
   };
 

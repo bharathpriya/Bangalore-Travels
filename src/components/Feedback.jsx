@@ -19,7 +19,7 @@ export default function Feedback() {
     <div className="container">
       <h2>Feedback</h2>
       <textarea value={msg} onChange={e => setMsg(e.target.value)} />
-      <button onClick={send}>Submit</button>
+      <button onClick={submitFeedback}>Submit</button>
     </div>
   );
 }

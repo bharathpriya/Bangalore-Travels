@@ -9,6 +9,8 @@ export default function SearchBus() {
   const [buses, setBuses] = useState([]);
   const navigate = useNavigate();
 
+  const [hasSearched, setHasSearched] = useState(false);
+
   const searchBus = async () => {
 
     if (!location.trim()) {
@@ -21,11 +23,13 @@ export default function SearchBus() {
       return;
     }
 
+    setHasSearched(false);
     const res = await axios.get(
       `${import.meta.env.VITE_BACKEND_URL}/bus/${location}`
     );
 
     setBuses(res.data);
+    setHasSearched(true);
   };
 
   return (
@@ -52,6 +56,12 @@ export default function SearchBus() {
       <button onClick={searchBus}>
         Search Bus
       </button>
+
+      {hasSearched && buses.length === 0 && (
+        <p style={{ textAlign: 'center', marginTop: '20px', color: '#ff6b6b' }}>
+          No buses found for this location.
+        </p>
+      )}
 
       {buses.map((bus) => (
         <div className="card" key={bus.id}>
