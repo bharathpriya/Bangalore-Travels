@@ -32,14 +32,14 @@ export default function About() {
 
   return (
     <div className="container" style={{ maxWidth: '800px' }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '30px', fontSize: '28px', background: 'linear-gradient(135deg, #06b6d4, #22c55e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '30px', fontSize: '28px', color: '#ffffff', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
         Discover Bangalore Travels
       </h2>
 
       {/* Hero Feature Slider */}
       <div style={{
         position: 'relative',
-        background: 'rgba(15, 23, 42, 0.6)',
+        background: 'rgba(15, 23, 42, 0.2)',
         borderRadius: '20px',
         padding: '30px',
         minHeight: '220px',
@@ -51,7 +51,9 @@ export default function About() {
         boxShadow: 'inset 0 2px 20px rgba(0,0,0,0.5)',
         border: '1px solid rgba(255,255,255,0.05)',
         overflow: 'hidden',
-        marginBottom: '40px'
+        marginBottom: '40px',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)'
       }}>
         {features.map((feature, index) => (
           <div
@@ -64,10 +66,10 @@ export default function About() {
               pointerEvents: currentSlide === index ? 'auto' : 'none'
             }}
           >
-            <div style={{ fontSize: '48px', marginBottom: '10px', textShadow: '0 4px 15px rgba(34, 197, 94, 0.4)' }}>
+            <div style={{ fontSize: '48px', marginBottom: '10px', textShadow: '0 4px 15px rgba(255, 255, 255, 0.4)' }}>
               {feature.icon}
             </div>
-            <h3 style={{ color: '#e2e8f0', margin: '0 0 10px 0', fontSize: '22px' }}>{feature.title}</h3>
+            <h3 style={{ color: '#ffffff', margin: '0 0 10px 0', fontSize: '22px' }}>{feature.title}</h3>
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', maxWidth: '500px', margin: '0 auto', lineHeight: '1.6' }}>
               {feature.desc}
             </p>
@@ -84,7 +86,7 @@ export default function About() {
                 width: '10px',
                 height: '10px',
                 borderRadius: '50%',
-                background: currentSlide === index ? '#22c55e' : 'rgba(255,255,255,0.2)',
+                background: currentSlide === index ? '#ffffff' : 'rgba(255,255,255,0.2)',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 transform: currentSlide === index ? 'scale(1.2)' : 'scale(1)'
@@ -104,21 +106,21 @@ export default function About() {
           Our next-generation fleet connects major cities across Karnataka and beyond, operating 24/7 to ensure you always reach your destination. Every vehicle undergoes rigorous daily maintenance protocols, and our drivers are internationally certified for long-haul overnight routes.
         </p>
 
-        <h3 style={{ color: '#06b6d4', marginTop: '30px', marginBottom: '15px' }}>Our Commitment to You</h3>
+        <h3 style={{ color: '#ffffff', marginTop: '30px', marginBottom: '15px' }}>Our Commitment to You</h3>
         <ul style={{ listStyleType: 'none', padding: 0, marginBottom: '30px' }}>
           <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ color: '#22c55e' }}>✓</span> 99.8% On-Time Departure Accuracy
+            <span style={{ color: '#ffffff' }}>✓</span> 99.8% On-Time Departure Accuracy
           </li>
           <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ color: '#22c55e' }}>✓</span> 24/7 Dedicated Customer Support Desk
+            <span style={{ color: '#ffffff' }}>✓</span> 24/7 Dedicated Customer Support Desk
           </li>
           <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ color: '#22c55e' }}>✓</span> Secure SMS/WhatsApp E-Ticketing System
+            <span style={{ color: '#ffffff' }}>✓</span> Secure SMS/WhatsApp E-Ticketing System
           </li>
         </ul>
 
         <Link to="/feedback" style={{ textDecoration: 'none' }}>
-          <button className="neon-btn" style={{ padding: '14px 24px', fontSize: '16px' }}>
+          <button style={{ padding: '14px 24px', fontSize: '16px', color: '#fff' }}>
             Got Questions? Contact Us ✉️
           </button>
         </Link>

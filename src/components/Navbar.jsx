@@ -68,14 +68,14 @@ export default function Navbar() {
                 width: '24px',
                 height: '24px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #06b6d4, #22c55e)',
+                background: 'rgba(255, 255, 255, 0.2)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '12px',
                 color: 'white',
                 fontWeight: 'bold',
-                boxShadow: '0 2px 10px rgba(6, 182, 212, 0.3)'
+                boxShadow: '0 2px 10px rgba(255, 255, 255, 0.2)'
               }}>
                 {userName ? userName.charAt(0).toUpperCase() : 'U'}
               </div>
