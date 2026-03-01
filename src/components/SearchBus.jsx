@@ -53,7 +53,7 @@ export default function SearchBus() {
         />
       </div>
 
-      <button onClick={searchBus}>
+      <button className="neon-btn" onClick={searchBus}>
         Search Bus
       </button>
 
@@ -77,6 +77,7 @@ export default function SearchBus() {
           </span>
 
           <button
+            className="neon-btn"
             onClick={() => {
               const userId = localStorage.getItem("userId");
               if (!userId) {
