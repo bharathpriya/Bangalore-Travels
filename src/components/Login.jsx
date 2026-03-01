@@ -25,7 +25,7 @@ export default function Login() {
       <h2>Login</h2>
       <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
       <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
-      <button onClick={submit}>Login</button>
+      <button onClick={login}>Login</button>
       <div style={{ marginTop: '20px', textAlign: 'center' }}>
         <Link to="/register" style={{ color: '#06b6d4', textDecoration: 'none' }}>Don't have an account? Register</Link>
       </div>
