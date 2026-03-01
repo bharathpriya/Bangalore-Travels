@@ -95,7 +95,7 @@ app.post("/booking", (req, res) => {
   }
 
   db.query(
-    "INSERT INTO bookings (name, age, address, destination, bookingtime, mobile, travel_date) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    "INSERT INTO bookings (name, age, address, destination, bookingtime, Mobile_number, travel_date) VALUES (?, ?, ?, ?, ?, ?, ?)",
     [name, age, address, destination, bookingtime, mobile, travel_date],
     async (err, result) => {
       if (err) {
