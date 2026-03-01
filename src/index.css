@@ -503,29 +503,120 @@ button:active::after {
 }
 
 /* ===================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (MOBILE OPTIMIZED)
    =================================== */
 
 @media (max-width: 768px) {
+  /* Navbar */
   .navbar {
-    padding: 15px 30px;
+    padding: 15px 20px;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .navbar h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .navbar div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
   
   .navbar a {
-    margin: 0 10px;
+    margin: 0;
+    padding: 6px 10px;
+    font-size: 14px;
   }
   
+  /* Containers */
   .container {
-    margin: 40px 20px;
-    padding: 30px 25px;
+    margin: 20px 15px;
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+
+  h2 {
+    font-size: 22px;
   }
   
+  /* Inputs & Buttons (Bigger touch targets) */
+  input {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevents iOS auto-zoom */
+    margin: 8px 0;
+  }
+  
+  button {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  /* Cards & Price Tags */
+  .card {
+    padding: 18px;
+    margin-top: 15px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
   .price {
     position: static;
+    display: block;
+    margin-top: 15px;
+    width: fit-content;
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  /* Booking Page & Payment */
+  .selected-bus {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .selected-bus h3 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .price-tag {
+    float: none;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  /* Flex Layouts in Forms (like Payment) */
+  div[style*="display: flex"] {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+
+  /* Payment Specific */
+  #payment-methods button {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar h2 {
+    font-size: 20px;
+  }
+  .navbar a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+  .container {
+    padding: 20px 15px;
   }
 }
 
