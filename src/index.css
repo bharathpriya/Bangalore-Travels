@@ -25,7 +25,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     radial-gradient(circle at 20% 50%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 40% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
@@ -35,8 +35,15 @@ body::before {
 }
 
 @keyframes backgroundShift {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.1) rotate(5deg); }
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
 }
 
 /* ===================================
@@ -63,6 +70,7 @@ body::before {
     transform: translateY(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -113,7 +121,7 @@ body::before {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   animation: floatIn 0.8s ease;
@@ -126,6 +134,7 @@ body::before {
     transform: translateY(50px) scale(0.95);
     opacity: 0;
   }
+
   to {
     transform: translateY(0) scale(1);
     opacity: 1;
@@ -152,8 +161,15 @@ body::before {
 }
 
 @keyframes borderGlow {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.5); }
+
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.5);
+  }
 }
 
 /* ===================================
@@ -182,7 +198,7 @@ input:focus {
   border-color: #22c55e;
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 8px 20px rgba(34, 197, 94, 0.2),
     0 0 0 4px rgba(34, 197, 94, 0.1);
 }
@@ -229,7 +245,7 @@ button::before {
 
 button:hover {
   transform: translateY(-4px);
-  box-shadow: 
+  box-shadow:
     0 12px 30px rgba(34, 197, 94, 0.4),
     0 0 40px rgba(34, 197, 94, 0.2);
 }
@@ -288,16 +304,28 @@ button:active::after {
   animation: cardFadeIn 0.5s ease backwards;
 }
 
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
-.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 @keyframes cardFadeIn {
   from {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -319,7 +347,7 @@ button:active::after {
   transform: translateY(-8px) scale(1.02);
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(34, 197, 94, 0.3);
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.3),
     0 0 20px rgba(34, 197, 94, 0.2);
 }
@@ -346,8 +374,15 @@ button:active::after {
 }
 
 @keyframes priceFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .price::after {
@@ -364,8 +399,17 @@ button:active::after {
 }
 
 @keyframes pricePulse {
-  0%, 100% { opacity: 0; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
 /* ===================================
@@ -380,7 +424,7 @@ button:active::after {
   position: relative;
   overflow: hidden;
   animation: selectedBusReveal 0.6s ease;
-  box-shadow: 
+  box-shadow:
     0 15px 40px rgba(99, 102, 241, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
@@ -390,6 +434,7 @@ button:active::after {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -408,8 +453,13 @@ button:active::after {
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
 }
 
 .price-tag {
@@ -423,8 +473,15 @@ button:active::after {
 }
 
 @keyframes priceTagBounce {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* ===================================
@@ -438,14 +495,17 @@ button:active::after {
 }
 
 @keyframes neonPulse {
-  0%, 100% { 
-    box-shadow: 
+
+  0%,
+  100% {
+    box-shadow:
       0 0 20px rgba(34, 197, 94, 0.5),
       0 0 40px rgba(34, 197, 94, 0.3),
       0 0 60px rgba(34, 197, 94, 0.2);
   }
-  50% { 
-    box-shadow: 
+
+  50% {
+    box-shadow:
       0 0 30px rgba(34, 197, 94, 0.7),
       0 0 60px rgba(34, 197, 94, 0.5),
       0 0 90px rgba(34, 197, 94, 0.3);
@@ -453,7 +513,7 @@ button:active::after {
 }
 
 .neon-btn:hover {
-  box-shadow: 
+  box-shadow:
     0 0 40px rgba(34, 197, 94, 0.8),
     0 0 80px rgba(34, 197, 94, 0.6),
     0 0 120px rgba(34, 197, 94, 0.4) !important;
@@ -499,7 +559,9 @@ button:active::after {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ===================================
@@ -507,33 +569,52 @@ button:active::after {
    =================================== */
 
 @media (max-width: 768px) {
+
   /* Navbar */
   .navbar {
     padding: 15px 20px;
     flex-direction: column;
     gap: 10px;
     text-align: center;
-  }
-  
-  .navbar h2 {
-    margin: 0 0 10px 0;
-    font-size: 24px;
-    width: 100%;
+    position: relative;
   }
 
-  .navbar div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-  
-  .navbar a {
+  .navbar h2 {
     margin: 0;
-    padding: 6px 10px;
-    font-size: 14px;
+    font-size: 24px;
+    text-align: left;
   }
-  
+
+  .hamburger-icon {
+    display: block !important;
+  }
+
+  .nav-links {
+    display: none !important;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(15, 23, 42, 0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 999;
+  }
+
+  .nav-links.mobile-open {
+    display: flex !important;
+    animation: slideDown 0.3s ease;
+  }
+
+  .navbar a {
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
   /* Containers */
   .container {
     margin: 20px 15px;
@@ -544,14 +625,15 @@ button:active::after {
   h2 {
     font-size: 22px;
   }
-  
+
   /* Inputs & Buttons (Bigger touch targets) */
   input {
     padding: 14px 16px;
-    font-size: 16px; /* Prevents iOS auto-zoom */
+    font-size: 16px;
+    /* Prevents iOS auto-zoom */
     margin: 8px 0;
   }
-  
+
   button {
     padding: 14px;
     font-size: 16px;
@@ -611,10 +693,12 @@ button:active::after {
   .navbar h2 {
     font-size: 20px;
   }
+
   .navbar a {
     font-size: 13px;
     padding: 6px 8px;
   }
+
   .container {
     padding: 20px 15px;
   }
@@ -629,8 +713,13 @@ button:active::after {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .slide-up {
@@ -642,6 +731,7 @@ button:active::after {
     transform: translateY(30px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -657,6 +747,7 @@ button:active::after {
     transform: scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;

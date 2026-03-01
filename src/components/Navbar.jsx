@@ -13,16 +13,29 @@ export default function Navbar() {
     window.location.href = "/login";
   };
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" style={{ position: 'relative' }}>
 
-      <h2>🚌 Bangalore Travels</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
+        <h2>🚌 Bangalore Travels</h2>
 
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Link to="/">Home</Link>
-        {!userId && <Link to="/login">Login</Link>}
-        <Link to="/feedback">Feedback</Link>
-        <Link to="/about">About</Link>
+        {/* Hamburger Icon for Mobile */}
+        <div
+          className="hamburger-icon"
+          style={{ fontSize: '24px', cursor: 'pointer', display: 'none' }}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          ☰
+        </div>
+      </div>
+
+      <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`} style={{ display: 'flex', alignItems: 'center' }}>
+        <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+        {!userId && <Link to="/login" onClick={() => setMobileMenuOpen(false)}>Login</Link>}
+        <Link to="/feedback" onClick={() => setMobileMenuOpen(false)}>Feedback</Link>
+        <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
         {userId && (
           <div
             style={{ display: 'flex', alignItems: 'center', marginLeft: '10px', position: 'relative' }}
