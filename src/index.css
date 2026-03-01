@@ -82,13 +82,13 @@ body::before {
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #22c55e, #06b6d4);
+  background: rgba(255, 255, 255, 0.6);
   transform: translateX(-50%);
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar a:hover {
-  color: #22c55e;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -136,7 +136,7 @@ body::before {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(135deg, #22c55e, #06b6d4, #6366f1);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 24px;
   z-index: -1;
   opacity: 0;
@@ -185,12 +185,12 @@ input::placeholder {
 }
 
 input:focus {
-  border-color: #22c55e;
+  border-color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
   box-shadow:
-    0 8px 20px rgba(34, 197, 94, 0.2),
-    0 0 0 4px rgba(34, 197, 94, 0.1);
+    0 8px 20px rgba(255, 255, 255, 0.2),
+    0 0 0 4px rgba(255, 255, 255, 0.1);
 }
 
 input:hover:not(:focus) {
@@ -207,7 +207,8 @@ button {
   padding: 16px;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.8), rgba(6, 182, 212, 0.8));
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: white;
@@ -217,7 +218,7 @@ button {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
   letter-spacing: 0.5px;
   margin-top: 8px;
 }
@@ -238,9 +239,9 @@ button::before {
 button:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 12px 30px rgba(34, 197, 94, 0.4),
-    0 0 40px rgba(34, 197, 94, 0.2);
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.95), rgba(6, 182, 212, 0.95));
+    0 12px 30px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 button:hover::before {
@@ -250,7 +251,7 @@ button:hover::before {
 
 button:active {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Ripple Effect on Click */
@@ -341,10 +342,10 @@ button:active::after {
 .card:hover {
   transform: translateY(-8px) scale(1.02);
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(34, 197, 94, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(34, 197, 94, 0.2);
+    0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .card:hover::before {
@@ -359,12 +360,15 @@ button:active::after {
   position: absolute;
   right: 24px;
   top: 24px;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 8px 16px;
   border-radius: 10px;
   font-weight: bold;
   font-size: 18px;
-  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
   animation: priceFloat 3s ease-in-out infinite;
 }
 
@@ -388,7 +392,7 @@ button:active::after {
   right: 0;
   bottom: 0;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
   animation: pricePulse 2s ease infinite;
   opacity: 0;
 }
@@ -412,7 +416,7 @@ button:active::after {
    =================================== */
 
 .selected-bus {
-  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  background: rgba(255, 255, 255, 0.15);
   padding: 28px;
   border-radius: 20px;
   margin-bottom: 24px;
@@ -459,11 +463,14 @@ button:active::after {
 
 .price-tag {
   float: right;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 8px 18px;
   border-radius: 10px;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
   animation: priceTagBounce 2s ease infinite;
 }
 
@@ -485,7 +492,7 @@ button:active::after {
 
 .neon-btn {
   position: relative;
-  background: linear-gradient(135deg, #22c55e, #06b6d4) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
   animation: neonPulse 2s ease-in-out infinite;
 }
 
@@ -494,24 +501,24 @@ button:active::after {
   0%,
   100% {
     box-shadow:
-      0 0 20px rgba(34, 197, 94, 0.5),
-      0 0 40px rgba(34, 197, 94, 0.3),
-      0 0 60px rgba(34, 197, 94, 0.2);
+      0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 40px rgba(255, 255, 255, 0.3),
+      0 0 60px rgba(255, 255, 255, 0.2);
   }
 
   50% {
     box-shadow:
-      0 0 30px rgba(34, 197, 94, 0.7),
-      0 0 60px rgba(34, 197, 94, 0.5),
-      0 0 90px rgba(34, 197, 94, 0.3);
+      0 0 30px rgba(255, 255, 255, 0.7),
+      0 0 60px rgba(255, 255, 255, 0.5),
+      0 0 90px rgba(255, 255, 255, 0.3);
   }
 }
 
 .neon-btn:hover {
   box-shadow:
-    0 0 40px rgba(34, 197, 94, 0.8),
-    0 0 80px rgba(34, 197, 94, 0.6),
-    0 0 120px rgba(34, 197, 94, 0.4) !important;
+    0 0 40px rgba(255, 255, 255, 0.8),
+    0 0 80px rgba(255, 255, 255, 0.6),
+    0 0 120px rgba(255, 255, 255, 0.4) !important;
   transform: translateY(-5px) scale(1.02) !important;
 }
 
@@ -528,14 +535,14 @@ button:active::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #22c55e, #06b6d4);
+  background: linear-gradient(180deg, #ffffff, #ffffff);
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #16a34a, #0891b2);
+  background: linear-gradient(180deg, #ffffff, #0891b2);
   background-clip: padding-box;
 }
 
@@ -547,7 +554,7 @@ button:active::after {
   width: 50px;
   height: 50px;
   border: 4px solid rgba(255, 255, 255, 0.1);
-  border-top: 4px solid #22c55e;
+  border-top: 4px solid #ffffff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 20px auto;
