@@ -46,11 +46,42 @@ export default function Navbar() {
             onMouseLeave={() => setDropdownOpen(false)}
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <span
-              style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#06b6d4', fontWeight: 'bold', cursor: 'pointer', padding: '8px 16px' }}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                color: '#fff',
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                fontWeight: '500',
+                cursor: 'pointer',
+                padding: '6px 14px 6px 6px',
+                borderRadius: '30px',
+                whiteSpace: 'nowrap',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'}
             >
-              👤 {userName}
-            </span>
+              <div style={{
+                width: '28px',
+                height: '28px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #06b6d4, #22c55e)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '14px',
+                color: 'white',
+                fontWeight: 'bold',
+                boxShadow: '0 2px 10px rgba(6, 182, 212, 0.3)'
+              }}>
+                {userName ? userName.charAt(0).toUpperCase() : 'U'}
+              </div>
+              <span style={{ fontSize: '15px', color: '#e2e8f0', letterSpacing: '0.5px' }}>{userName}</span>
+              <span style={{ fontSize: '10px', opacity: 0.5, marginLeft: '4px' }}>▼</span>
+            </div>
 
             {dropdownOpen && (
               <div style={{
