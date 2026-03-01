@@ -95,13 +95,15 @@ app.post("/booking", (req, res) => {
     return res.status(400).send("Name, Age, Address, Mobile, and Travel Date are required");
   }
 
+  const formattedBookingTime = new Date(bookingtime || Date.now()).toISOString().slice(0, 19).replace('T', ' ');
+
   db.query(
     "INSERT INTO bookings (name, age, address, destination, bookingtime, Mobile_number, travel_date) VALUES (?, ?, ?, ?, ?, ?, ?)",
-    [name, age, address, destination, bookingtime, userMobile, travel_date],
+    [name, age, address, destination, formattedBookingTime, userMobile, travel_date],
     async (err, result) => {
       if (err) {
         console.error("Booking error:", err);
-        return res.status(500).send("Database error");
+        return res.status(500).send("Database error: " + err.message);
       }
 
       const bookingId = result.insertId;
