@@ -107,7 +107,11 @@ app.post("/booking", (req, res) => {
       }
 
       const bookingId = result.insertId;
-      const ticketPath = path.join(__dirname, "public", "tickets", `ticket_${bookingId}.pdf`);
+      const ticketsDir = path.join(__dirname, "public", "tickets");
+      if (!fs.existsSync(ticketsDir)) {
+        fs.mkdirSync(ticketsDir, { recursive: true });
+      }
+      const ticketPath = path.join(ticketsDir, `ticket_${bookingId}.pdf`);
 
       try {
         // Generate QR Code
@@ -138,7 +142,9 @@ app.post("/booking", (req, res) => {
         doc.end();
 
         // URL for the ticket
-        const baseUrl = process.env.BACKEND_URL || `http://localhost:5000`;
+        const host = req.get('host');
+        const protocol = host.includes('localhost') ? 'http' : 'https';
+        const baseUrl = process.env.BACKEND_URL || `${protocol}://${host}`;
         const ticketUrl = `${baseUrl}/tickets/ticket_${bookingId}.pdf`;
 
         // Send SMS with Ticket Link
