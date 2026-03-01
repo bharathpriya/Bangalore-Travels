@@ -135,7 +135,8 @@ app.post("/booking", (req, res) => {
         doc.end();
 
         // URL for the ticket
-        const ticketUrl = `http://localhost:5000/tickets/ticket_${bookingId}.pdf`;
+        const baseUrl = process.env.BACKEND_URL || `http://localhost:5000`;
+        const ticketUrl = `${baseUrl}/tickets/ticket_${bookingId}.pdf`;
 
         // Send SMS with Ticket Link
         const formattedDate = new Date(travel_date).toLocaleDateString();
