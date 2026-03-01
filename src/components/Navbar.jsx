@@ -28,6 +28,7 @@ export default function Navbar() {
             style={{ display: 'flex', alignItems: 'center', marginLeft: '10px', position: 'relative' }}
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
+            onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             <span
               style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#06b6d4', fontWeight: 'bold', cursor: 'pointer', padding: '8px 16px' }}
