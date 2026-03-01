@@ -587,6 +587,9 @@ button:active::after {
 
   .hamburger-icon {
     display: block !important;
+    position: absolute;
+    right: 20px;
+    top: 13px;
   }
 
   .nav-links {
