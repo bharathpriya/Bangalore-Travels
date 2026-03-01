@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Navbar() {
   const userId = localStorage.getItem("userId");
   const userName = localStorage.getItem("userName");
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("userId");
     localStorage.removeItem("userName");
-    window.location.href = "/login";
+    setDropdownOpen(false);
+    navigate("/");
+    window.location.reload(); // Force immediate re-render of Navbar state
   };
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
