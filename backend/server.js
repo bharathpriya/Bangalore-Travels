@@ -23,7 +23,7 @@ app.use('/tickets', express.static(path.join(__dirname, 'public/tickets')));
 app.get("/bus/:location", (req, res) => {
   const loc = `%${req.params.location}%`;
   db.query(
-    "SELECT * FROM buses WHERE source LIKE ? OR destination LIKE ?",
+    "SELECT * FROM buses WHERE LOWER(source) LIKE LOWER(?) OR LOWER(destination) LIKE LOWER(?)",
     [loc, loc],
     (err, result) => {
       if (err) return res.status(500).send(err);

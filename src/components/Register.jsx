@@ -8,6 +8,11 @@ export default function Register() {
     const [password, setPassword] = useState("");
 
     const submit = async () => {
+        if (!name.trim() || !email.trim() || !password.trim()) {
+            alert("Please fill in all fields before registering.");
+            return;
+        }
+
         try {
             const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, {
                 name,
