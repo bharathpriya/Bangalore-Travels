@@ -70,19 +70,34 @@ export default function Navbar() {
                 flexDirection: 'column',
                 animation: 'slideUp 0.3s ease'
               }}>
-                <a
-                  href="/"
+                <button
                   onClick={handleLogout}
                   style={{
                     margin: '0',
                     textAlign: 'center',
-                    padding: '4px 8px',
+                    padding: '8px 16px',
                     fontSize: '14px',
-                    display: 'block'
+                    display: 'block',
+                    width: '100%',
+                    background: 'transparent',
+                    border: 'none',
+                    color: '#f87171',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    borderRadius: '6px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = 'rgba(248, 113, 113, 0.15)';
+                    e.target.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'transparent';
+                    e.target.style.transform = 'scale(1)';
                   }}
                 >
                   Logout
-                </a>
+                </button>
               </div>
             )}
           </div>
