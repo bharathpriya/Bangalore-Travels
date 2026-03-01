@@ -97,7 +97,6 @@ export default function Booking() {
       />
 
       <button
-        className="neon-btn"
         onClick={submitBooking}
       >
         Confirm Booking
